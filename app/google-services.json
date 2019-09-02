@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "390739459761",
+    "firebase_url": "https://peluchitos-96ba4.firebaseio.com",
+    "project_id": "peluchitos-96ba4",
+    "storage_bucket": "peluchitos-96ba4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:390739459761:android:5719d2224239a078",
+        "android_client_info": {
+          "package_name": "com.nestorcalvo.peluchitos"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "390739459761-6oja2vb7d5vbt8d15vv4hdqm2d12tnan.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.nestorcalvo.peluchitos",
+            "certificate_hash": "0c75269bd9382da07e107d2cfd58d618830acc3e"
+          }
+        },
+        {
+          "client_id": "390739459761-nu04m4d1cmvcv7jt33t4eg7ek2bg023s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBB0piQqZRmqWqxZ_wlIzJV4hfEnyHahyg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "390739459761-nu04m4d1cmvcv7jt33t4eg7ek2bg023s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
