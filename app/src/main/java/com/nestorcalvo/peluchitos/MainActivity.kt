@@ -14,9 +14,9 @@ import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
 import kotlinx.android.synthetic.main.fragment_add.*
 
-class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener, comunicador {
+class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
-    private var PeluchesList: ArrayList<PeluchesClass>? = null
+    //private var PeluchesList: ArrayList<PeluchesClass>? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -36,9 +36,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         toggle.syncState()
 
         navView.setNavigationItemSelectedListener(this)
-        bnAdd.setOnClickListener {
 
-        }
     }
 
 
@@ -107,7 +105,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         return true
     }
 
-    override fun enviarDatos(ID:String, nombre: String, cantidad:String, precio:String) {
+    /*override fun enviarDatos(ID:String, nombre: String, cantidad:String, precio:String) {
         val args = Bundle()
         args.putString("ID", ID)
         args.putString("nombre", nombre)
@@ -119,12 +117,12 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         var fragmento = InventoryFragment()
         fragmento.arguments = args
         transaction.replace(R.id.fragmentLayout, fragmento).commit()
-    }
+    }*/
 
-    override fun guardarDatos(ID: String, nombre: String, cantidad: Int, precio: Int) {
+    /*override fun guardarDatos(ID: String, nombre: String, cantidad: Int, precio: Int) {
         PeluchesList!!.add(PeluchesClass(ID,nombre,cantidad,precio))
         print(PeluchesList)
-    }
+    }*/
 
 
 }
