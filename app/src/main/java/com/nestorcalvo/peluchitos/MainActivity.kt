@@ -10,13 +10,14 @@ import com.google.android.material.navigation.NavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import android.view.Menu
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
-import kotlinx.android.synthetic.main.fragment_add.*
+import kotlinx.android.synthetic.main.fragment_search.*
 
-class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
+class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener, comunicador {
 
-    //private var PeluchesList: ArrayList<PeluchesClass>? = null
+    private var PeluchesList = mutableListOf<PeluchesClass>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -36,6 +37,10 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         toggle.syncState()
 
         navView.setNavigationItemSelectedListener(this)
+        val manager:FragmentManager = supportFragmentManager
+        val transition:FragmentTransaction = manager.beginTransaction()
+        val addFragment = AddFragment()
+        transition.replace(R.id.fragmentLayout,addFragment).commit()
 
     }
 
@@ -82,12 +87,14 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 val manager:FragmentManager = supportFragmentManager
                 val transition:FragmentTransaction = manager.beginTransaction()
                 val searchFragment = SearchFragment()
+                sendArguments(searchFragment)
                 transition.replace(R.id.fragmentLayout,searchFragment).commit()
             }
             R.id.nav_delete -> {
                 val manager:FragmentManager = supportFragmentManager
                 val transition:FragmentTransaction = manager.beginTransaction()
                 val deleteFragment = DeleteFragment()
+                sendArguments(deleteFragment)
                 transition.replace(R.id.fragmentLayout,deleteFragment).commit()
 
             }
@@ -95,7 +102,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 val manager:FragmentManager = supportFragmentManager
                 val transition:FragmentTransaction = manager.beginTransaction()
                 val inventoryFragment = InventoryFragment()
-
+                sendArguments(inventoryFragment)
                 transition.replace(R.id.fragmentLayout,inventoryFragment).commit()
             }
 
@@ -105,24 +112,25 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         return true
     }
 
-    /*override fun enviarDatos(ID:String, nombre: String, cantidad:String, precio:String) {
-        val args = Bundle()
-        args.putString("ID", ID)
-        args.putString("nombre", nombre)
-        args.putString("cantidad", cantidad)
-        args.putString("precio", precio)
+    override fun guardarDatos(ID: String, nombre: String, cantidad: Int, precio: Int) {
 
-        val manager: FragmentManager = supportFragmentManager
-        val transaction: FragmentTransaction = manager.beginTransaction()
-        var fragmento = InventoryFragment()
-        fragmento.arguments = args
-        transaction.replace(R.id.fragmentLayout, fragmento).commit()
-    }*/
+        val peluche = PeluchesClass(ID,nombre,cantidad,precio)
+        PeluchesList.add(peluche)
 
-    /*override fun guardarDatos(ID: String, nombre: String, cantidad: Int, precio: Int) {
-        PeluchesList!!.add(PeluchesClass(ID,nombre,cantidad,precio))
-        print(PeluchesList)
-    }*/
+    }
+
+    override fun removerDatos(index: Int) {
+        PeluchesList.removeAt(index)
+        Log.d("Eliminado", "Valor eliminado de la lista")
+        Log.d("Tamaño", PeluchesList.size.toString())
+    }
+    private fun sendArguments(fragment: Fragment) {
+        var args = Bundle()
+        var lista :ArrayList<PeluchesClass> = PeluchesList as ArrayList<PeluchesClass>
+        args.putParcelableArrayList("lista", lista)
+        fragment.arguments = args
+    }
+
 
 
 }

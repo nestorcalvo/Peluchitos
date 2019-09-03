@@ -17,10 +17,11 @@
     <EditText
             android:layout_width="match_parent" android:layout_height="wrap_content"
             android:id="@+id/edNombreSearch"
-            android:text="@string/edNombre"/>
+            android:hint="@string/edNombre"/>
     <Button android:layout_width="wrap_content" android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="@string/buscar"
             android:id="@+id/bnSearch"/>
+
 
 </LinearLayout>
