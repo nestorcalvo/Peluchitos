@@ -104,6 +104,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 val inventoryFragment = InventoryFragment()
                 sendArguments(inventoryFragment)
                 transition.replace(R.id.fragmentLayout,inventoryFragment).commit()
+
             }
 
         }

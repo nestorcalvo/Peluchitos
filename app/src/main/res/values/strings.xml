@@ -26,5 +26,7 @@
     <string name="buscar">Buscar</string>
     <string name="tvdelete">Eliminar peluche</string>
     <string name="eliminar">Eliminar</string>
+    <string name="add_success">Añadido con exito</string>
+    <string name="error">Todos los campos deben ser llenados</string>
 
 </resources>

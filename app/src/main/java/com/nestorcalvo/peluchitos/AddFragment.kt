@@ -34,20 +34,16 @@ class AddFragment : Fragment() {
                 val empty = ""
 
                 interfaz?.guardarDatos(ID, nombre, cantidad, precio)
-                Toast.makeText(context, "El peluche fue añadido con exito", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, R.string.add_success, Toast.LENGTH_SHORT).show()
                 view.edID.setText(empty)
                 view.edNombre.setText(empty)
                 view.edCantidad.setText(empty)
                 view.edPrecio.setText(empty)
             }
             catch (e:NumberFormatException){
-                Toast.makeText(context, "Todos los campos deben ser llenados", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, R.string.error, Toast.LENGTH_SHORT).show()
 
             }
-
-
-
-
         }
         return view
     }

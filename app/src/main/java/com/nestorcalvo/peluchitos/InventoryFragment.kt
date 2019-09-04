@@ -6,6 +6,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import androidx.viewpager.widget.ViewPager
+import com.google.android.material.tabs.TabLayout
 import kotlinx.android.synthetic.main.fragment_inventory.*
 import kotlinx.android.synthetic.main.fragment_inventory.view.*
 
@@ -13,6 +17,7 @@ import kotlinx.android.synthetic.main.fragment_inventory.view.*
 
 class InventoryFragment : Fragment() {
     private var lista =arrayListOf<PeluchesClass>()
+    private lateinit var recyclerView: RecyclerView
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -22,9 +27,24 @@ class InventoryFragment : Fragment() {
         if (arguments != null) {
             lista = arguments!!.getParcelableArrayList<PeluchesClass>("lista") as ArrayList<PeluchesClass>
         }
-        view.tvNombreInventario.text = lista.size.toString()
+
+
+        recyclerView = view.findViewById(R.id.recycler)
+        recyclerView.setHasFixedSize(true)
+
+        recyclerView.layoutManager = LinearLayoutManager(context,RecyclerView.VERTICAL,false)
+
+        val superheroesAdapter = context?.let { PeluchitosAdapter(lista, it) }
+        recyclerView.adapter = superheroesAdapter
+
+
+
+
         return view
     }
+
+
+
 
 
 }
