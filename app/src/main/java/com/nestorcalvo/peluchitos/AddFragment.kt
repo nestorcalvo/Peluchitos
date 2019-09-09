@@ -40,6 +40,7 @@ class AddFragment : Fragment() {
                 view.edCantidad.setText(empty)
                 view.edPrecio.setText(empty)
             }
+
             catch (e:NumberFormatException){
                 Toast.makeText(context, R.string.error, Toast.LENGTH_SHORT).show()
 

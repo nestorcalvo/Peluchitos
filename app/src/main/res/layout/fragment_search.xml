@@ -5,23 +5,32 @@
               android:layout_height="match_parent"
               android:padding="10dp"
               android:orientation="vertical"
-              tools:context=".SearchFragment">
+              tools:context=".SearchFragment" android:background="@drawable/linear_gradient">
 
-    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
-              android:gravity="center"
+    <TextView android:layout_width="match_parent" android:layout_height="51dp"
+              android:textAlignment="textStart"
               android:text="@string/tvsearch"
               android:textColor="@color/black"
               android:textSize="20sp"
-              android:id="@+id/tvsearch"/>
-
+              android:id="@+id/tvsearch" android:drawableLeft="@drawable/ic_search_icon"
+              android:drawablePadding="4dp" android:layout_marginLeft="4dp"
+              android:fontFamily="sans-serif-black" android:gravity="center"/>
     <EditText
             android:layout_width="match_parent" android:layout_height="wrap_content"
             android:id="@+id/edNombreSearch"
-            android:hint="@string/edNombre"/>
+
+            android:hint="@string/edNombre" android:inputType="textPersonName" android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:drawableLeft="@drawable/ic_nombre" android:layout_marginLeft="16dp" android:drawablePadding="4dp"/>
     <Button android:layout_width="wrap_content" android:layout_height="wrap_content"
-            android:layout_gravity="center"
+            android:gravity="center"
             android:text="@string/buscar"
-            android:id="@+id/bnSearch"/>
+            android:id="@+id/bnSearch" android:layout_gravity="center" android:background="@drawable/button_selector"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp" app:layout_constraintBottom_toTopOf="@+id/imageView3"
+            app:layout_constraintVertical_bias="0.166" android:fontFamily="sans-serif"/>
     <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"
             android:layout_height="match_parent" app:layout_constraintTop_toTopOf="parent"

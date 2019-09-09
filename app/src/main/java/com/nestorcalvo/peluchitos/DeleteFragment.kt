@@ -42,7 +42,7 @@ class DeleteFragment : Fragment(){
             }
 
             if (NotFound) {
-                Toast.makeText(context, "No se encontró ningun peluche con ese nombre", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, "No se encontró ningun peluche con ese nombre", Toast.LENGTH_LONG).show()
             }
         }
         return view

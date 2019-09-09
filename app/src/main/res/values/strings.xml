@@ -21,12 +21,14 @@
     <string name="edID">ID:</string>
     <string name="edPrecio">Precio:</string>
     <string name="edCantidad">Cantidad:</string>
-    <string name="enviar">Enviar</string>
+    <string name="enviar">Agregar</string>
     <string name="tvsearch">Buscar peluche por nombre</string>
     <string name="buscar">Buscar</string>
     <string name="tvdelete">Eliminar peluche</string>
     <string name="eliminar">Eliminar</string>
     <string name="add_success">Añadido con exito</string>
     <string name="error">Todos los campos deben ser llenados</string>
+    <string name="company_name">Peluchitos Enterprise</string>
+    <string name="company_name_app">Peluchitos Enterprise App</string>
 
 </resources>
